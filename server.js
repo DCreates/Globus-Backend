@@ -11,9 +11,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Health Check
+app.get("/", (req, res) => {
+  res.json({ message: "Server is running" });
+});
+
 // Routes
 import userRoutes from "./routes/userRoutes.js";
 app.use("/api/users", userRoutes);
+
+// 404 Handler
+app.use((req, res) => {
+  res.status(404).json({ error: "Route not found" });
+});
 
 // Connect DB
 mongoose.connect(process.env.MONGO_URI)
