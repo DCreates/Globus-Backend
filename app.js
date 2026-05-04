@@ -3,6 +3,10 @@ import cors from "cors";
 
 import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import testimonialRoutes from "./routes/testimonialRoute.js";
+import serviceRoutes from "./routes/serviceRoute.js";
+import branchRoutes from "./routes/branchRoute.js";
+import authRoutes from "./routes/authRoutes.js";
 
 const app = express();
 
@@ -13,6 +17,10 @@ app.use(express.json());
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/testimonials", testimonialRoutes);
+app.use("/api/services", serviceRoutes);
+app.use("/api/branches", branchRoutes);
+app.use("/api/auth", authRoutes);
 
 // Health check
 app.get("/", (req, res) => {
