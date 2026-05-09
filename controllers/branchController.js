@@ -3,7 +3,9 @@ import Branch from "../models/Branches.js";
 // GET all branches
 export const getBranches = async (req, res) => {
   try {
-    const branches = await Branch.find().sort({ createdAt: -1 });
+    const branches = await Branch.findAll({
+      order: [["createdAt", "DESC"]],
+    });
     res.json(branches);
   } catch (err) {
     res.status(500).json({ message: err.message });

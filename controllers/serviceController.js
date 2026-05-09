@@ -3,7 +3,9 @@ import Service from "../models/CommunityServices.js";
 // GET all services
 export const getServices = async (req, res) => {
   try {
-    const services = await Service.find().sort({ createdAt: -1 });
+    const services = await Service.findAll({
+      order: [["createdAt", "DESC"]],
+    });
     res.json(services);
   } catch (err) {
     res.status(500).json({ message: err.message });

@@ -1,30 +1,44 @@
-import mongoose from "mongoose";
+import { DataTypes } from "sequelize";
+import { sequelize } from "../config/db.js";
 
-const branchSchema = new mongoose.Schema(
+const Branch = sequelize.define(
+  "Branch",
   {
-    name: {
-      type: String,
-      required: true,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    subtitle: String,
-    place: String,
-
-    img: String,
-    owner: String,
-    ownerImg: String,
-
-    description: String,
-
-    whyChoose: [String],
-    services: [String],
-    highlights: [String],
-
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    subtitle: DataTypes.STRING,
+    place: DataTypes.STRING,
+    img: DataTypes.STRING,
+    owner: DataTypes.STRING,
+    ownerImg: DataTypes.STRING,
+    description: DataTypes.TEXT,
+    whyChoose: {
+      type: DataTypes.JSON,
+      defaultValue: [],
+    },
+    services: {
+      type: DataTypes.JSON,
+      defaultValue: [],
+    },
+    highlights: {
+      type: DataTypes.JSON,
+      defaultValue: [],
+    },
     timing: {
-      days: String,
-      hours: String,
+      type: DataTypes.JSON,
+      defaultValue: { days: "", hours: "" },
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
-export default mongoose.model("Branch", branchSchema);
+export default Branch;

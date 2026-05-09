@@ -3,7 +3,9 @@ import Testimonial from "../models/Testimonials.js";
 // GET all testimonials
 export const getTestimonials = async (req, res) => {
   try {
-    const data = await Testimonial.find().sort({ createdAt: -1 });
+    const data = await Testimonial.findAll({
+      order: [["createdAt", "DESC"]],
+    });
     res.json(data);
   } catch (err) {
     res.status(500).json({ message: err.message });

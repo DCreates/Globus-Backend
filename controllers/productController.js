@@ -3,7 +3,9 @@ import Product from "../models/Product.js";
 // GET all products
 export const getProducts = async (req, res) => {
   try {
-    const products = await Product.find().sort({ createdAt: -1 });
+    const products = await Product.findAll({
+      order: [["createdAt", "DESC"]],
+    });
     res.json(products);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -23,12 +25,12 @@ export const createProduct = async (req, res) => {
 // UPDATE product
 export const updateProduct = async (req, res) => {
   try {
-    const updated = await Product.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
-    res.json(updated);
+    const product = await Product.findByPk(req.params.id);
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+    await product.update(req.body);
+    res.json(product);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -37,7 +39,11 @@ export const updateProduct = async (req, res) => {
 // DELETE product
 export const deleteProduct = async (req, res) => {
   try {
-    await Product.findByIdAndDelete(req.params.id);
+    const product = await Product.findByPk(req.params.id);
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+    await product.destroy();
     res.json({ message: "Product deleted" });
   } catch (err) {
     res.status(500).json({ message: err.message });
