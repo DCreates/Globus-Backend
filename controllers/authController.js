@@ -76,3 +76,14 @@ export const login = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+// LOGOUT
+export const logout = async (req, res) => {
+  try {
+    res.status(200).json({
+      message: "Logout successful. Please remove the token from the client.",
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
