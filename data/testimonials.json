@@ -1,0 +1,146 @@
+[
+  {
+    "id": 2,
+    "name": "Mr. Farhath Zimal",
+    "role": "lead Globus Software Unit",
+    "company": "own a software agency.",
+    "image": "/testimonials/person15.jpg",
+    "quote": "Being a partner in Globus has helped me move closer to my future goal of building my own software agency at the age of 22 by giving me valuable support & opportunities.",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Mr. Isam ",
+    "role": "IPad Achiever",
+    "company": "",
+    "image": "/testimonials/person1.jpg",
+    "quote": "Being a partner in Globus helped me grow faster with the right support and opportunities.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "name": "Mr. Sajeewan",
+    "role": "IPad Achiever",
+    "company": "",
+    "image": "/testimonials/person3.jpg",
+    "quote": "Globus gave me a clear path to start my business. The ecosystem makes everything simple and connected.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "name": "Mr. Vajithan",
+    "role": "Bike Achiever",
+    "company": "",
+    "image": "/testimonials/person4.jpg",
+    "quote": "Globus is not just a platform, it’s a real business network where anyone can participate and succeed.",
+    "rating": 5
+  },
+  {
+    "id": 6,
+    "name": "Mr. Mahthee",
+    "role": "IPad Achiever",
+    "company": "",
+    "image": "/testimonials/person5.jpg",
+    "quote": "The earning opportunities in Globus are flexible and easy to understand. Great for new entrepreneurs.",
+    "rating": 5
+  },
+  {
+    "id": 7,
+    "name": "Mr. Mufassir",
+    "role": "IPad Achiever",
+    "company": "",
+    "image": "/testimonials/person6.jpg",
+    "quote": "Through Globus, I found the right people and the right system to expand my business.",
+    "rating": 5
+  },
+  {
+    "id": 8,
+    "name": "Mr. Rilwan",
+    "role": "Franchise Owner",
+    "company": "Mini SuperMarket.",
+    "image": "/testimonials/person7.jpg",
+    "quote": "Globus creates a strong community where growth, support, and success go hand in hand.",
+    "rating": 5
+  },
+  {
+    "id": 9,
+    "name": "Mr. Afsal ",
+    "role": "IPad Achiever",
+    "company": "",
+    "image": "/testimonials/person8.jpg",
+    "quote": "Being a partner in Globus helped me grow faster with the right support and opportunities.",
+    "rating": 5
+  },
+  {
+    "id": 10,
+    "name": "Mr.  Sujanthan",
+    "role": "IPad Achiever",
+    "company": "",
+    "image": "/testimonials/person9.jpg",
+    "quote": "I love how Globus connects manufacturers and entrepreneurs in one place. It’s powerful.",
+    "rating": 5
+  },
+  {
+    "id": 11,
+    "name": "Mr. Aleem ",
+    "role": "Bike Achiever",
+    "company": "",
+    "image": "/testimonials/person10.jpg",
+    "quote": "Globus gave me a clear path to start my business. The ecosystem makes everything simple and connected.",
+    "rating": 5
+  },
+  {
+    "id": 12,
+    "name": "Mr. Sajeevan ",
+    "role": "MacBook Achiever",
+    "company": "",
+    "image": "/testimonials/person11.jpg",
+    "quote": "Globus is not just a platform, it’s a real business network where anyone can participate and succeed.",
+    "rating": 5
+  },
+  {
+    "id": 13,
+    "name": "Mr. Nathasi",
+    "role": "Bike Achiever",
+    "company": "",
+    "image": "/testimonials/person12.jpg",
+    "quote": "The earning opportunities in Globus are flexible and easy to understand. Great for new entrepreneurs.",
+    "rating": 5
+  },
+  {
+    "id": 14,
+    "name": "Mr. Mahthee",
+    "role": "MacBook Achiever",
+    "company": "",
+    "image": "/testimonials/person2.jpg",
+    "quote": "Through Globus, I found the right people and the right system to expand my business.",
+    "rating": 5
+  },
+  {
+    "id": 16,
+    "name": "Mr. Sajeevan",
+    "role": "Bike Achiever",
+    "company": "",
+    "image": "/testimonials/person16.jpeg",
+    "quote": "Through Globus, I connected with the right team and tools to grow my business smoothly.",
+    "rating": 5
+  },
+  {
+    "id": 17,
+    "name": "Mr. mukaththis ",
+    "role": "I Pad Achiever",
+    "company": "",
+    "image": "/testimonials/person17.jpeg",
+    "quote": "Globus helped me find the perfect support system to take my business to the next level.",
+    "rating": 5
+  },
+  {
+    "id": 18,
+    "name": "Mr. Mufaris ",
+    "role": "i Phone Achiever",
+    "company": "",
+    "image": "/testimonials/person18.png",
+    "quote": "With Globus, I discovered reliable solutions and people who truly understand my business needs.",
+    "rating": 5
+  }
+]

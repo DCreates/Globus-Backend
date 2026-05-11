@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Business Education",
+    "description": "We conduct free business education sessions and workshops to create awareness and inspire entrepreneurship.",
+    "image": "/image/service1.jpeg",
+    "tag": "Education"
+  },
+  {
+    "id": 4,
+    "title": "Leadership Campaign",
+    "description": "We run leadership campaigns to empower individuals with skills and knowledge to lead successful businesses and communities.",
+    "image": "/image/service4.jpg",
+    "tag": "Leadership"
+  },
+  {
+    "id": 2,
+    "title": "School Support",
+    "description": "We support students by providing school bags, books and other study materials to encourage their education.",
+    "image": "/image/service2.jpeg",
+    "tag": "Support"
+  },
+  {
+    "id": 3,
+    "title": "School Support",
+    "description": "We support students by providing school bags, books and other study materials to encourage their education.",
+    "image": "/image/service3.jpeg",
+    "tag": "Support"
+  },
+  {
+    "id": 5,
+    "title": "School Support",
+    "description": "We support students by providing school bags, books and other study materials to encourage their education.",
+    "image": "/image/service5.jpeg",
+    "tag": "Support"
+  },
+  {
+    "id": 6,
+    "title": "Orphanage Support",
+    "description": "We provide food and essential support to orphanages and care homes to bring smiles and care to those in need.",
+    "image": "/image/service6.jpg",
+    "tag": "Support"
+  }
+]

@@ -1,0 +1,102 @@
+export const products = [
+  {
+    id: 1,
+    img: "/image/product4.jpeg",
+    ownerImg: "/image/owner4.jpg",
+    title:
+      "A rich and premium tea powder crafted from carefully selected leaves, delivering a bold aroma, smooth taste, and export-quality excellence in every cup.",
+    benefits: [
+      "Enriched with carefully selected premium tea leaves", "Delivers a rich aroma and bold, authentic flavor", "Expertly processed to preserve natural freshness", "Smooth, refreshing taste with long-lasting satisfaction", "Crafted to meet high export-quality standards",],
+    price: 1400,
+    featured: true,
+  },
+  {
+    id: 2,
+    img: "/image/product10.jpg",
+    ownerImg: "/image/owner9.png",
+    title:
+      "A luxurious and premium attar crafted from the finest aromatic essences, designed to deliver a long-lasting, captivating fragrance with a rich and elegant finish.",
+    benefits: [
+      "Enriched with premium natural aromatic extracts", "Long-lasting fragrance that keeps you fresh all day", "Crafted with skin-friendly, high-quality ingredients", "Smooth, non-greasy application with a rich scent profile", "Designed to enhance elegance and leave a lasting impression",],
+    price: 260,
+    featured: true,
+  },
+
+  // NORMAL PRODUCTS
+
+  {
+    id: 3,
+    img: "/image/product11.png",
+    ownerImg: "/image/owner0.png",
+    title: "100% chemical free and Organic Mint Hand-Made Soap.",
+    benefits: ["Reduce acne marks & breakouts", "Gives fresh & smooth feel", "Reduces Redness on Face", "100% Natural Mint Extracts"],
+    price: 750,
+  },
+  {
+    id: 4,
+    img: "/image/product3.jpeg",
+    ownerImg: "/image/owner6.jpeg",
+    title: "Premium natural oils formulated to strengthen hair",
+    benefits: ["Promotes healthy hair growth",
+      "Strengthens hair from roots to tips",
+      "Adds natural shine and smoothness",
+      "Nourishes and hydrates the scalp",
+      "Helps reduce dandruff and dryness",],
+    price: 1700,
+  },
+  {
+    id: 5,
+    img: "/image/product14.jpg",
+    ownerImg: "/image/owner0.png",
+    title: "100% chemical free Red Wine Hand-Made Soap.",
+    benefits: ["Non alcoholic red wine, Pure Glycerine base", "Black grape extract water", "Grape Distillate, Fragrance Oil"],
+    price: 800,
+  },
+  {
+    id: 6,
+    img: "/image/product9.jpg",
+    ownerImg: "/image/owner0.png",
+    title: "Pure Nature Radiant Skin Arganiya D Aloe Vera Cream.",
+    benefits: ["Hydrates Deeply Moisturizes and nourishes the skin", "Soothes Skin Calms irritation and redness", "Reduces Dark Spots Helps fade spots and promotes even skin tone"],
+    price: 900,
+  },
+
+  // EXTRA ITEMS (fixed IDs)
+
+  {
+    id: 7,
+    img: "/image/product15.jpg",
+    ownerImg: "/image/owner6.jpeg",
+    title: "The best Globus Lightning Lip Balm.",
+    benefits: ["Enriched with natural strawberry essence",
+      "Keeps lips moisturized and soft",
+      "Made with skin-friendly, natural ingredients",
+      "Smooth application with long-lasting color",
+      "Helps protect lips from dryness and dullness",],
+    price: 650,
+  },
+  {
+    id: 8,
+    img: "/image/product7.jpeg",
+    ownerImg: "/image/owner0.png",
+    title: "Premium Leather wallet Crafted for style.",
+    benefits: ["Long-lasting Premium Material", "High-quality Genuine Leather", "Unique Embossed Design", "Strong, Stylish Metal Buckle"],
+    price: 3400,
+  },
+  {
+    id: 9,
+    img: "/image/product12.png",
+    ownerImg: "/image/owner0.png",
+    title: "Radiant Glow – Naturally Yours Skin Brightening Cream.",
+    benefits: ["Helps improve dull and uneven skin for a natural glow.", "Keeps skin soft, smooth, and well-hydrated.", "Protects against dryness and environmental damage.", "Enriched with gentle, skin-friendly botanical extracts.",],
+    price: 1540,
+  },
+  {
+    id: 10,
+    img: "/image/product8.png",
+    ownerImg: "/image/owner0.png",
+    title: "Premium Leather Belt Crafted for style.",
+    benefits: ["High-quality Genuine Leather", "Unique Embossed Design", "Strong, Stylish Metal Buckle", "Perfect for Formal & Casual Wear"],
+    price: 3600,
+  },
+];
