@@ -4,11 +4,11 @@ import {
   createTestimonial,
 } from "../controllers/testimonialController.js";
 
-import { protect } from "../middleware/authMiddleware.js";
+import { protect, adminOnly } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 router.get("/", getTestimonials);
-router.post("/", protect, createTestimonial);
+router.post("/", protect, adminOnly, createTestimonial);
 
 export default router;

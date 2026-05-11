@@ -4,11 +4,11 @@ import {
   createService,
 } from "../controllers/serviceController.js";
 
-import { protect } from "../middleware/authMiddleware.js";
+import { protect, adminOnly } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 router.get("/", getServices);
-router.post("/", protect, createService);
+router.post("/", protect, adminOnly, createService);
 
 export default router;

@@ -5,12 +5,12 @@ import {
   
 } from "../controllers/branchController.js";
 
-import { protect } from "../middleware/authMiddleware.js";
+import { protect, adminOnly } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 router.get("/", getBranches);
-router.post("/", protect, createBranch);
+router.post("/", protect, adminOnly, createBranch);
 
 
 export default router;
