@@ -1,13 +1,14 @@
 import dotenv from "dotenv";
 import app from "./app.js";
-import connectDB from "./config/db.js";
+import sequelize from "./config/db.js";
 
 dotenv.config();
 
 // Connect DB and start server
 const startServer = async () => {
   try {
-    await connectDB();
+    await sequelize.authenticate();
+    await sequelize.sync({ alter: true });
 
     const PORT = process.env.PORT || 5000;
 

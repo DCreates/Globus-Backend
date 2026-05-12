@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
-import connectDB, { sequelize } from "../config/db.js";
+import sequelize from "../config/db.js";
 import User from "../models/User.js";
 import Product from "../models/Product.js";
 import Service from "../models/CommunityServices.js";
@@ -63,7 +63,7 @@ const seedFile = async (file) => {
 
 const run = async () => {
   try {
-    await connectDB();
+    await sequelize.authenticate();
 
     // ensure data directory exists
     try {

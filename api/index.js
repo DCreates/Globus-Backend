@@ -1,4 +1,4 @@
-import connectDB from "../config/db.js";
+import sequelize from "../config/db.js";
 import app from "../app.js";
 
 let connected = false;
@@ -6,7 +6,8 @@ let connected = false;
 const ensureDb = async () => {
   if (!connected) {
     try {
-      await connectDB();
+      await sequelize.authenticate();
+      await sequelize.sync({ alter: true });
       connected = true;
     } catch (err) {
       // log and continue; Vercel will show the error in function logs
