@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import app from "./app.js";
 import sequelize from "./config/db.js";
+import { seedDatabase } from "./utils/seedDatabase.js";
 
 dotenv.config();
 
@@ -9,6 +10,7 @@ const startServer = async () => {
   try {
     await sequelize.authenticate();
     await sequelize.sync({ alter: true });
+    await seedDatabase();
 
     const PORT = process.env.PORT || 5000;
 
