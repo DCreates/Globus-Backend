@@ -1,18 +1,12 @@
-import sequelize from "../config/db.js";
 import app from "../app.js";
-
-let connected = false;
+import connectMongo from "../config/mongo.js";
 
 const ensureDb = async () => {
-  if (!connected) {
-    try {
-      await sequelize.authenticate();
-      await sequelize.sync({ alter: true });
-      connected = true;
-    } catch (err) {
-      // log and continue; Vercel will show the error in function logs
-      console.error("DB connect failed:", err);
-    }
+  try {
+    await connectMongo();
+  } catch (err) {
+    // log and continue; Vercel will show the error in function logs
+    console.error("DB connect failed:", err);
   }
 };
 

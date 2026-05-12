@@ -1,28 +1,31 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "../config/db.js";
+import mongoose from "mongoose";
 
-const Service = sequelize.define(
-  "Service",
+const serviceSchema = new mongoose.Schema(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     title: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: String,
+      required: true,
     },
     description: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+      type: String,
+      required: true,
     },
-    image: DataTypes.STRING,
-    tag: DataTypes.STRING,
+    image: String,
+    tag: String,
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: (_, ret) => {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.__v;
+      },
+    },
   }
 );
+
+const Service = mongoose.model("Service", serviceSchema);
 
 export default Service;

@@ -37,7 +37,7 @@ const seedFile = async (file, { force = false } = {}) => {
     return;
   }
 
-  const existingCount = await Model.count();
+  const existingCount = await Model.countDocuments();
   if (!force && existingCount > 0) {
     return;
   }
@@ -56,8 +56,12 @@ const seedFile = async (file, { force = false } = {}) => {
     );
   }
 
-  await Model.bulkCreate(rows, { validate: true, ignoreDuplicates: true });
-  console.log(`Seeded ${rows.length} record(s) into ${Model.name} from ${file}`);
+  if (force) {
+    await Model.deleteMany({});
+  }
+
+  await Model.insertMany(rows, { ordered: false });
+  console.log(`Seeded ${rows.length} record(s) into ${Model.modelName} from ${file}`);
 };
 
 export const seedDatabase = async ({ force = false } = {}) => {

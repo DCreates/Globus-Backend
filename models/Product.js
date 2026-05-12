@@ -1,36 +1,39 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "../config/db.js";
+import mongoose from "mongoose";
 
-const Product = sequelize.define(
-  "Product",
+const productSchema = new mongoose.Schema(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    img: DataTypes.STRING,
-    ownerImg: DataTypes.STRING,
+    img: String,
+    ownerImg: String,
     title: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: String,
+      required: true,
     },
     benefits: {
-      type: DataTypes.JSON,
-      defaultValue: [],
+      type: [String],
+      default: [],
     },
     price: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
+      type: Number,
+      required: true,
     },
     featured: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
+      type: Boolean,
+      default: false,
     },
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: (_, ret) => {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.__v;
+      },
+    },
   }
 );
+
+const Product = mongoose.model("Product", productSchema);
 
 export default Product;

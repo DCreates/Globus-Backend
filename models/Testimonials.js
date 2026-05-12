@@ -1,33 +1,36 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "../config/db.js";
+import mongoose from "mongoose";
 
-const Testimonial = sequelize.define(
-  "Testimonial",
+const testimonialSchema = new mongoose.Schema(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: String,
+      required: true,
     },
-    role: DataTypes.STRING,
-    company: DataTypes.STRING,
-    image: DataTypes.STRING,
+    role: String,
+    company: String,
+    image: String,
     quote: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+      type: String,
+      required: true,
     },
     rating: {
-      type: DataTypes.INTEGER,
-      defaultValue: 5,
+      type: Number,
+      default: 5,
     },
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: (_, ret) => {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.__v;
+      },
+    },
   }
 );
+
+const Testimonial = mongoose.model("Testimonial", testimonialSchema);
 
 export default Testimonial;
