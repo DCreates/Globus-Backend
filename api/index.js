@@ -6,8 +6,7 @@ let connected = false;
 const setCorsHeaders = (res, req) => {
   const origin = req.headers.origin;
   const allowedOrigins = [
-    "http://localhost:5173",
-    "http://localhost:3000",
+    "https://globus-final-git-develop-d-creates-projects.vercel.app/",
     process.env.FRONTEND_URL,
     process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
   ].filter(Boolean);
