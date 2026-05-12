@@ -17,7 +17,9 @@ const connectDB = async () => {
     console.log("SQLite Database Connected");
   } catch (error) {
     console.error("Database Connection Failed:", error.message);
-    process.exit(1);
+    // Do not exit the process in serverless environments (Vercel) —
+    // throw the error so callers can decide how to handle it.
+    throw error;
   }
 };
 
