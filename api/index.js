@@ -16,6 +16,16 @@ const ensureDb = async () => {
 };
 
 export default async function handler(req, res) {
-  await ensureDb();
-  return app(req, res);
+  try {
+    await ensureDb();
+
+    // Delegate to Express app
+    return app(req, res);
+  } catch (err) {
+    // Log full error for Vercel function logs and return a safe 500
+    console.error("Serverless handler error:", err);
+    res.statusCode = 500;
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ message: "Internal Server Error" }));
+  }
 }
