@@ -1,9 +1,7 @@
 import sequelize from "../config/db.js";
 import app from "../app.js";
-import { seedDatabase } from "../utils/seedDatabase.js";
 
 let connected = false;
-let seeded = false;
 
 const ensureDb = async () => {
   if (!connected) {
@@ -14,15 +12,6 @@ const ensureDb = async () => {
     } catch (err) {
       // log and continue; Vercel will show the error in function logs
       console.error("DB connect failed:", err);
-    }
-  }
-
-  if (connected && !seeded) {
-    try {
-      await seedDatabase();
-      seeded = true;
-    } catch (err) {
-      console.error("DB seed failed:", err);
     }
   }
 };
