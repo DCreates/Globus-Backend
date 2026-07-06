@@ -1,0 +1,40 @@
+// controllers/uploadController.js
+import fs from 'fs';
+import path from 'path';
+
+export const uploadImage = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    // Build public URL for the uploaded file
+    const fileUrl = `${req.protocol}://${req.get('host')}/uploads/products/${req.file.filename}`;
+
+    res.status(201).json({
+      message: 'Image uploaded successfully',
+      url: fileUrl,
+      filename: req.file.filename
+    });
+
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+// Delete image from uploads folder
+export const deleteImage = async (req, res) => {
+  try {
+    const { filename } = req.params;
+    const filePath = path.join('uploads/products', filename);
+
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+      res.json({ message: 'Image deleted successfully' });
+    } else {
+      res.status(404).json({ message: 'File not found' });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
